@@ -40,7 +40,7 @@ class VkBot():
                     rasp_chisl[i],
                     rasp_znam[i])
         # Расписание звонков
-        elif text in ('звонки', 'з', 'z'):
+        elif text in ('z', 'з'):
             return rasp_zvon
         # Расписание на сегодня
         else:
