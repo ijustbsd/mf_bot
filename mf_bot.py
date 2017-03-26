@@ -24,7 +24,7 @@ class VkBot():
     def answerer(self, text):
         numbers = [str(i) for i in range(1, 8)]
         # Расписание на завтра
-        if text in ('rz', 'рз'):
+        if text.lower() in ('rz', 'рз'):
             tomorrow = datetime.date.today() + datetime.timedelta(days=1)
             wd = tomorrow.weekday()
             chisl = tomorrow.isocalendar()[1] % 2
@@ -40,7 +40,7 @@ class VkBot():
                     rasp_chisl[i],
                     rasp_znam[i])
         # Расписание звонков
-        elif text in ('z', 'з'):
+        elif text.lower() in ('z', 'з'):
             return rasp_zvon
         # Расписание на сегодня
         else:
