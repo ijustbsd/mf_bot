@@ -35,10 +35,10 @@ class VkBot():
             if rasp_chisl[i] == rasp_znam[i]:
                 return rasp_today[i] + rasp_chisl[i]
             else:
-                return '''
-                    %s Числитель:
-                    %s\nЗнаменатель
-                    %s''' % (rasp_today[i], rasp_chisl[i], rasp_znam[i])
+                return '%sЧислитель:\n%s\nЗнаменатель:\n%s' % (\
+                    rasp_today[i],
+                    rasp_chisl[i],
+                    rasp_znam[i])
         # Расписание звонков
         elif text in ('звонки', 'з', 'z'):
             return rasp_zvon
