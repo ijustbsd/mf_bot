@@ -19,7 +19,10 @@ class VkBot():
 
     def sender(self, user_id, message):
         vk = self.vk_session.get_api()
-        vk.messages.send(user_id=user_id, message=message)
+        if message == 'textbooks':
+            vk.messages.send(user_id=user_id, attachment='wall420602032_5')
+        else:
+            vk.messages.send(user_id=user_id, message=message)
 
     def answerer(self, text):
         numbers = [str(i) for i in range(1, 8)]
@@ -42,6 +45,9 @@ class VkBot():
         # Расписание звонков
         elif text.lower() in ('z', 'з'):
             return rasp_zvon
+        # Список учебников
+        elif text.lower() in ('u', 'у'):
+            return 'textbooks'
         # Расписание на сегодня
         else:
             today = datetime.date.today()
